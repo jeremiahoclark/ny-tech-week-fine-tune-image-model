@@ -11,6 +11,21 @@ print_gpu_summary || true
 
 echo "== Python =="
 "$PYTHON_BIN" --version
+
+if ! "$PYTHON_BIN" -m pip --version >/dev/null 2>&1; then
+  echo "pip is missing for $PYTHON_BIN; bootstrapping pip..."
+  if "$PYTHON_BIN" -m ensurepip --upgrade >/dev/null 2>&1; then
+    echo "pip installed with ensurepip."
+  elif command -v uv >/dev/null 2>&1; then
+    uv pip install --python "$PYTHON_BIN" pip setuptools wheel
+  else
+    tmp_get_pip="$(mktemp /tmp/get-pip.XXXXXX.py)"
+    curl -fsSL https://bootstrap.pypa.io/get-pip.py -o "$tmp_get_pip"
+    "$PYTHON_BIN" "$tmp_get_pip"
+    rm -f "$tmp_get_pip"
+  fi
+fi
+
 "$PYTHON_BIN" -m pip install --upgrade pip setuptools wheel
 
 echo "== Workshop Python packages =="
