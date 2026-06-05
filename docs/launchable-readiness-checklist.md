@@ -54,7 +54,7 @@ Use these in the Brev Console wizard:
 Code source: Git Repository
 Repository: https://github.com/jeremiahoclark/ny-tech-week-fine-tune-image-model
 Runtime: VM Mode
-Setup script: bash postBuild.bash
+Setup script: bash preBuild.bash && bash postBuild.bash
 Jupyter Notebook Experience: Yes
 GPU: 1x A100
 Disk: 200GB minimum, 300GB safer
