@@ -54,7 +54,7 @@ Use these in the Brev Console wizard:
 Code source: Git Repository
 Repository: https://github.com/jeremiahoclark/ny-tech-week-fine-tune-image-model
 Runtime: VM Mode
-Setup script: bash preBuild.bash && bash postBuild.bash
+Setup script: paste the contents of setup.sh, or upload setup.sh
 Jupyter Notebook Experience: Yes
 GPU: 1x A100
 Disk: 200GB minimum, 300GB safer
@@ -69,10 +69,14 @@ Pre-build: bash preBuild.bash
 Post-build: bash postBuild.bash
 ```
 
-If it has only one setup script field, use:
+If it has only one setup script field, paste this:
 
-```bash
-bash preBuild.bash && bash postBuild.bash
+```text
+#!/bin/bash
+set -euo pipefail
+
+bash preBuild.bash
+bash postBuild.bash
 ```
 
 ## Final Smoke Test

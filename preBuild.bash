@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 sudo apt-get update
@@ -19,4 +19,3 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 EOM
-

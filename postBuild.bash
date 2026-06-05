@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 if [[ -f variables.env ]]; then
@@ -14,4 +14,3 @@ if [[ "${DOWNLOAD_MODELS_ON_BUILD:-0}" == "1" ]]; then
 else
   echo "Skipping model download during build. Run bash scripts/download_models.sh before the live workshop or set DOWNLOAD_MODELS_ON_BUILD=1."
 fi
-
