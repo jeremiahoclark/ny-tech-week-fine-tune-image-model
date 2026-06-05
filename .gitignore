@@ -1,0 +1,16 @@
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+vendor/
+models/
+.cache/
+outputs/*
+!outputs/.gitkeep
+data/my_lora/
+data/dataset/
+data/uploads/
+data/fallback_character/images/
+*.log
+artifacts/drive_datasets/staging/
+artifacts/drive_datasets/*.zip

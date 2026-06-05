@@ -1,0 +1,66 @@
+specVersion: v2
+specMinorVersion: 2
+meta:
+  name: fine-tune-image-model
+  image: project-fine-tune-image-model
+  description: "NY Tech Week workshop: train a personal image LoRA with Z-Image and Musubi Tuner."
+  labels:
+    - nvidia
+    - brev
+    - jupyter
+    - image-generation
+    - lora
+  defaultBranch: main
+layout:
+  - path: notebooks/
+    type: code
+    storage: git
+  - path: scripts/
+    type: code
+    storage: git
+  - path: configs/
+    type: code
+    storage: git
+  - path: data/
+    type: code
+    storage: git
+  - path: loras/
+    type: code
+    storage: gitlfs
+environment:
+  base:
+    registry: nvcr.io
+    image: nvidia/pytorch:25.03-py3
+    name: NVIDIA PyTorch
+    labels:
+      - ubuntu
+      - python3
+      - cuda
+      - pytorch
+      - jupyterlab
+    apps:
+      - name: JupyterLab
+        type: jupyterlab
+        class: webapp
+        start_command: jupyter lab --allow-root --port 8888 --ip 0.0.0.0 --no-browser --NotebookApp.base_url=$PROXY_PREFIX --NotebookApp.default_url=/lab/tree/notebooks/01_train_personal_lora.ipynb --NotebookApp.allow_origin='*' --NotebookApp.password='' --NotebookApp.token=''
+        health_check_command: curl -o /dev/null -sL $(jupyter lab list | grep :8888 | awk '{print $1}' | head -1)
+        stop_command: jupyter lab stop 8888
+        timeout_seconds: 90
+        webapp_options:
+          autolaunch: true
+          port: "8888"
+          proxy:
+            trim_prefix: false
+execution:
+  apps: []
+  resources:
+    gpu:
+      requested: 1
+    sharedMemoryMB: 0
+  secrets: []
+  mounts:
+    - type: project
+      target: /project/
+      description: Project directory
+      options: rw
+

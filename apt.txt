@@ -1,0 +1,10 @@
+curl
+git
+git-lfs
+g++
+jq
+libgl1
+tmux
+vim
+wget
+

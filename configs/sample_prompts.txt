@@ -1,0 +1,6 @@
+jalen, a photo of a man, modern professional headshot, clean background, natural expression, soft studio lighting, sharp focus --w 768 --h 768 --s 24 --d 3301 --l 1
+jalen, a photo of a man, wearing a black leather jacket, New York rooftop at dusk, editorial magazine portrait, cinematic lighting --w 768 --h 768 --s 24 --d 3302 --l 1
+jalen, a photo of a man, action movie lead, tactical black jacket, dramatic studio lighting, intense expression, poster-quality portrait --w 768 --h 768 --s 24 --d 3303 --l 1
+jalen, a photo of a man, seated on a late-night talk show set, black outfit, warm stage lighting, candid smile --w 768 --h 768 --s 24 --d 3304 --l 1
+jalen, a photo of a man, wearing a premium sportswear launch jacket, urban campaign photography, clean product ad composition, room for headline text --w 768 --h 768 --s 24 --d 3305 --l 1
+jalen, a photo of a man, YouTube thumbnail portrait composition without text, excited expression, clean studio lighting, colorful background shapes --w 768 --h 768 --s 24 --d 3306 --l 1

@@ -1,0 +1,10 @@
+# ref: https://jupyter-app-launcher.readthedocs.io/en/stable/usage.html
+
+- title: "Fine-Tune Image Model"
+  description: "Train a personal Z-Image LoRA and generate a fictional social campaign."
+  source: /project/notebooks/01_train_personal_lora.ipynb
+  cwd: /project
+  args: {}
+  type: notebook
+  catalog: NY Tech Week
+
